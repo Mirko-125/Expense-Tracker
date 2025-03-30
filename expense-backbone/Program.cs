@@ -42,5 +42,22 @@ namespace ExpenseTracker
             string json = JsonSerializer.Serialize(expenses, options);
             File.WriteAllText(path, json);
         }
+
+        static void AddExpense(List<Expense> expenses)
+        {
+
+        }
+        static void UpdateExpense(List<Expense> expenses)
+        {
+
+        }
+        static void DeleteExpense(List<Expense> expenses)
+        {
+
+        }
+        static void ListExpenses(List<Expense> expenses)
+        {
+
+        }
     }
 }

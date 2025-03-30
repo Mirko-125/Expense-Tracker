@@ -15,5 +15,9 @@ namespace ExpenseTracker
         public int Amount { get; set; }
         public DateTime Date { get; set; }
         // public Category Value { get; set; }
+        public override string ToString()
+        {
+            return $"ID: {ID}, Description: {Description}, Amount: {Amount}, Spent on {Date} (UTC)";
+        }
     }
 }
