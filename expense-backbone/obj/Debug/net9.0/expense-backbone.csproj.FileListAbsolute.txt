@@ -1,0 +1,15 @@
+D:\Projects\Expense-Tracker\expense-backbone\bin\Debug\net9.0\expense-backbone.exe
+D:\Projects\Expense-Tracker\expense-backbone\bin\Debug\net9.0\expense-backbone.deps.json
+D:\Projects\Expense-Tracker\expense-backbone\bin\Debug\net9.0\expense-backbone.runtimeconfig.json
+D:\Projects\Expense-Tracker\expense-backbone\bin\Debug\net9.0\expense-backbone.dll
+D:\Projects\Expense-Tracker\expense-backbone\bin\Debug\net9.0\expense-backbone.pdb
+D:\Projects\Expense-Tracker\expense-backbone\obj\Debug\net9.0\expense-backbone.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\Expense-Tracker\expense-backbone\obj\Debug\net9.0\expense-backbone.AssemblyInfoInputs.cache
+D:\Projects\Expense-Tracker\expense-backbone\obj\Debug\net9.0\expense-backbone.AssemblyInfo.cs
+D:\Projects\Expense-Tracker\expense-backbone\obj\Debug\net9.0\expense-backbone.csproj.CoreCompileInputs.cache
+D:\Projects\Expense-Tracker\expense-backbone\obj\Debug\net9.0\expense-backbone.sourcelink.json
+D:\Projects\Expense-Tracker\expense-backbone\obj\Debug\net9.0\expense-backbone.dll
+D:\Projects\Expense-Tracker\expense-backbone\obj\Debug\net9.0\refint\expense-backbone.dll
+D:\Projects\Expense-Tracker\expense-backbone\obj\Debug\net9.0\expense-backbone.pdb
+D:\Projects\Expense-Tracker\expense-backbone\obj\Debug\net9.0\expense-backbone.genruntimeconfig.cache
+D:\Projects\Expense-Tracker\expense-backbone\obj\Debug\net9.0\ref\expense-backbone.dll
