@@ -105,9 +105,24 @@ namespace ExpenseTracker
                 Console.WriteLine("Please enter a valid expense ID");
             }
         }
-        static void DeleteExpense(List<Expense> expenses)
+        static void DeleteExpense(List<Expense> expenses, string stringId)
         {
-
+            try
+            {
+                int id = Int32.Parse(stringId);
+                var expense = expenses.Find(e => e.ID == id);
+                if (expense == null)
+                {
+                    Console.WriteLine("Expense with ID " + id + " not found.");
+                    return;
+                }
+                expenses.Remove(expense);
+                Console.WriteLine("Successfully deleted expense, expense remains: " + expense);
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Please enter a valid expense ID");
+            }
         }
         static void ListExpenses(List<Expense> expenses)
         {
