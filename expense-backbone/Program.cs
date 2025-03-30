@@ -8,6 +8,13 @@ namespace ExpenseTracker
         public static int Main(string[] args)
         {
             var expenses = LoadData();
+            // left TODO
+            // Users can view a summary of all expenses.
+            // Users can view a summary of expenses for a specific month (of current year).
+            // will be a plus
+            // Add expense categories and allow users to filter expenses by category.
+            // Allow users to set a budget for each month and show a warning when the user exceeds the budget.
+            // Allow users to export expenses to a CSV file.
             ShowUsage();
             SaveData(expenses);
             return 1;
@@ -124,9 +131,14 @@ namespace ExpenseTracker
                 Console.WriteLine("Please enter a valid expense ID");
             }
         }
-        static void ListExpenses(List<Expense> expenses)
+        static void ListExpenses(List<Expense> expenses) // string[] args
         {
-
+            // filtering checking
+            foreach (var expense in expenses)
+            {
+                // filtering
+                Console.WriteLine(expense);
+            }
         }
     }
 }
