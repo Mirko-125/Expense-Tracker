@@ -76,7 +76,29 @@ namespace ExpenseTracker
                     Console.WriteLine("Expense with ID " + id + " not found.");
                     return;
                 }
-                // you are here
+                Console.WriteLine("Editing: " + expense + ", which part do you want to edit?");
+                Console.WriteLine("'d' for description");
+                Console.WriteLine("'a' for amount");
+                string? choice = Console.ReadLine();
+                switch (choice)
+                {
+                    case "d":
+                        Console.WriteLine("Write the new description for the expense");
+                        expense.Description = Console.ReadLine();
+                        break;
+                    case "a":
+                        Console.WriteLine("Write the new amount of cash for the expense");
+                        string? cash = Console.ReadLine();
+                        if (null != cash)
+                        {
+                            expense.Amount = Int32.Parse(cash);
+                        }
+                        break;
+                    default:
+                        Console.WriteLine($"Error: {choice} is out of bounds");
+                        return;
+                }
+                Console.WriteLine("Successfully updated expense: " + expense);
             }
             catch (FormatException)
             {
