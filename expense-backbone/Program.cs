@@ -2,22 +2,59 @@
 
 namespace ExpenseTracker
 {
+    // left TODO
+    // Users can view a summary of all expenses.
+    // Users can view a summary of expenses for a specific month (of current year).
+    // will be a plus
+    // Add expense categories and allow users to filter expenses by category.
+    // Allow users to set a budget for each month and show a warning when the user exceeds the budget.
+    // Allow users to export expenses to a CSV file.
     public class Program
     {
         private const string path = "data.json";
         public static int Main(string[] args)
         {
+            if (args.Length < 1)
+            {
+                ShowUsage();
+                return 0;
+            }
+            string command = args[0].ToLower();
             var expenses = LoadData();
-            // left TODO
-            // Users can view a summary of all expenses.
-            // Users can view a summary of expenses for a specific month (of current year).
-            // will be a plus
-            // Add expense categories and allow users to filter expenses by category.
-            // Allow users to set a budget for each month and show a warning when the user exceeds the budget.
-            // Allow users to export expenses to a CSV file.
-            ShowUsage();
+            try
+            {
+                switch (command)
+                {
+                    case "add":
+                        if (args.Length != 5)
+                        {
+                            Console.WriteLine("Mistake is made when giving arguments, check the example underneath:");
+                            ShowUsage();
+                        }
+                        AddExpense(expenses, args[2], args[4]);
+                        break;
+                    case "update":
+
+                        break;
+                    case "delete":
+
+                        break;
+                    case "list":
+
+                        break;
+                    default:
+                        Console.WriteLine("Unknown command, check the example underneath:");
+                        ShowUsage();
+                        return 1;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"ERROR: An exception has occured: {ex}");
+            }
+
             SaveData(expenses);
-            return 1;
+            return 0;
         }
 
         static void ShowUsage()
