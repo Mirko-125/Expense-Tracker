@@ -37,10 +37,15 @@ namespace ExpenseTracker
 
                         break;
                     case "delete":
-
+                        if (args.Length != 3)
+                        {
+                            Console.WriteLine("Mistake is made when giving arguments, check the example underneath:");
+                            ShowUsage();
+                        }
+                        DeleteExpense(expenses, args[2]);
                         break;
                     case "list":
-
+                        ListExpenses(expenses);
                         break;
                     default:
                         Console.WriteLine("Unknown command, check the example underneath:");
@@ -102,7 +107,7 @@ namespace ExpenseTracker
                 };
 
                 expenses.Add(newExpense);
-                Console.WriteLine("Expense added successfully (ID: 1), use list for details");
+                Console.WriteLine($"Expense added successfully (ID: {newExpense.ID}), use list for details");
             }
             catch (FormatException)
             {

@@ -4,5 +4,11 @@
     "Description": "Fabriano",
     "Amount": 280,
     "Date": "2025-04-01T19:29:21.9713788Z"
+  },
+  {
+    "ID": 2,
+    "Description": "A5 notebook",
+    "Amount": 200,
+    "Date": "2025-04-01T19:34:11.4031001Z"
   }
 ]
