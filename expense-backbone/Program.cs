@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.Text;
+using System.Text.Json;
 
 namespace ExpenseTracker
 {
@@ -51,6 +52,9 @@ namespace ExpenseTracker
                         break;
                     case "list":
                         ListExpenses(expenses);
+                        break;
+                    case "export":
+                        ExportToCSV(expenses);
                         break;
                     default:
                         Console.WriteLine("Unknown command, check the example underneath:");
@@ -187,5 +191,39 @@ namespace ExpenseTracker
                 Console.WriteLine(expense);
             }
         }
+
+        #region Feature: CSV Formating
+        static void ExportToCSV(List<Expense> expenses)
+        {
+            var csv = new StringBuilder();
+            csv.AppendLine("ID,Description,Amount,Date");
+            foreach (var expense in expenses)
+            {
+                string escapedDescription;
+                if (null != expense.Description)
+                {
+                    escapedDescription = EscapeCsvField(expense.Description);
+                }
+                else
+                {
+                    escapedDescription = "N/A";
+                }
+                string formattedDate = expense.Date.ToString("yyyy-MM-dd HH:mm:ss");
+                csv.AppendLine($"{expense.ID},{escapedDescription},{expense.Amount},{formattedDate}");
+            }
+            File.WriteAllText("expenses.csv", csv.ToString());
+            Console.WriteLine("Successfully exported to CSV");
+        }
+
+        static string EscapeCsvField(string field)
+        {
+            if (field.Contains(',') || field.Contains('"') || field.Contains('\n'))
+            {
+                field = field.Replace("\"", "\"\"");
+                return $"\"{field}\"";
+            }
+            return field;
+        }
+        #endregion
     }
 }

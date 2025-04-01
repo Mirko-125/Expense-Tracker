@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("expense-backbone")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cc16270536300fd504bdb91d2b44a4ff3d55c6d2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+71dfec8dcc2d824ffc0a60d4501c72a3ac560aba")]
 [assembly: System.Reflection.AssemblyProductAttribute("expense-backbone")]
 [assembly: System.Reflection.AssemblyTitleAttribute("expense-backbone")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
