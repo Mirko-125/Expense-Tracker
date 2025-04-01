@@ -34,7 +34,12 @@ namespace ExpenseTracker
                         AddExpense(expenses, args[2], args[4]);
                         break;
                     case "update":
-
+                        if (args.Length != 3)
+                        {
+                            Console.WriteLine("Mistake is made when giving arguments, check the example underneath:");
+                            ShowUsage();
+                        }
+                        UpdateExpense(expenses, args[2]);
                         break;
                     case "delete":
                         if (args.Length != 3)
