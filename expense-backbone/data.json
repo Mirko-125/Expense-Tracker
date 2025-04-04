@@ -10,5 +10,35 @@
     "Description": "A5 notebook",
     "Amount": 200,
     "Date": "2025-04-01T19:34:11.4031001Z"
+  },
+  {
+    "ID": 3,
+    "Description": "Soul",
+    "Amount": 0,
+    "Date": "2025-04-01T23:41:09.4448621Z"
+  },
+  {
+    "ID": 4,
+    "Description": "Le\u0161nik kafa",
+    "Amount": 280,
+    "Date": "2025-04-03T23:47:50.2850326Z"
+  },
+  {
+    "ID": 5,
+    "Description": "BlackHearts Club Fleetwood Mac tribute karta",
+    "Amount": 600,
+    "Date": "2025-04-03T23:48:25.4056069Z"
+  },
+  {
+    "ID": 6,
+    "Description": "Taxi",
+    "Amount": 370,
+    "Date": "2025-04-03T23:48:43.8174156Z"
+  },
+  {
+    "ID": 7,
+    "Description": "Menza Milo\u0161 J",
+    "Amount": 90,
+    "Date": "2025-04-03T23:49:14.8012776Z"
   }
 ]

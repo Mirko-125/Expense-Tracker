@@ -9,7 +9,6 @@ namespace ExpenseTracker
     // will be a plus
     // Add expense categories and allow users to filter expenses by category.
     // Allow users to set a budget for each month and show a warning when the user exceeds the budget.
-    // Allow users to export expenses to a CSV file.
     public class Program
     {
         private const string path = "data.json";
@@ -223,6 +222,15 @@ namespace ExpenseTracker
                 return $"\"{field}\"";
             }
             return field;
+        }
+        #endregion
+
+        #region experimenting
+        static void CalculateByMonth(List<Expense> expenses, string month)
+        {
+            // month should be an enum
+            // maybe we should send these functions somewhere else
+            // also should this return lke only the sum or the average value or both.. .
         }
         #endregion
     }
