@@ -9,6 +9,21 @@ namespace ExpenseTracker
     // will be a plus
     // Add expense categories and allow users to filter expenses by category.
     // Allow users to set a budget for each month and show a warning when the user exceeds the budget.
+    public enum Month
+    {
+        January = 1,
+        February,
+        March,
+        April,
+        May,
+        June,
+        July,
+        August,
+        September,
+        October,
+        November,
+        December
+    }
     public class Program
     {
         private const string path = "data.json";
@@ -54,6 +69,15 @@ namespace ExpenseTracker
                         break;
                     case "export":
                         ExportToCSV(expenses);
+                        break;
+                    //Console.WriteLine("$ expense-tracker summary --month 8");
+                    case "summary":
+                        if (args.Length != 3)
+                        {
+                            Console.WriteLine("Mistake is made when giving arguments, check the example underneath:");
+                            ShowUsage();
+                        }
+                        CalculateByMonth(expenses, args[2]);
                         break;
                     default:
                         Console.WriteLine("Unknown command, check the example underneath:");
@@ -226,11 +250,25 @@ namespace ExpenseTracker
         #endregion
 
         #region experimenting
-        static void CalculateByMonth(List<Expense> expenses, string month)
+        static void CalculateByMonth(List<Expense> expenses, string monthInput)
         {
-            // month should be an enum
-            // maybe we should send these functions somewhere else
-            // also should this return lke only the sum or the average value or both.. .
+            int monthValue = Int32.Parse(monthInput);
+
+            var filteredExpenses = expenses.Where(expense =>
+            {
+                return expense.Date.Month == monthValue;
+            }).ToList();
+
+            int sum = 0;
+
+            foreach (var expense in filteredExpenses)
+            {
+                Console.WriteLine(expense);
+                sum += expense.Amount;
+            }
+            double average = (double)sum / filteredExpenses.Count;
+            Console.WriteLine($"Total sum of expenses done on the {monthValue}{(monthValue == 1 ? "st" : monthValue == 2 ? "nd" : monthValue == 3 ? "rd" : "th")} month is {sum}");
+            Console.WriteLine($"While the average spent on the {monthValue}{(monthValue == 1 ? "st" : monthValue == 2 ? "nd" : monthValue == 3 ? "rd" : "th")} month is {average}");
         }
         #endregion
     }
